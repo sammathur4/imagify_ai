@@ -14,6 +14,8 @@ NEW_FOLDER = os.path.join(UPLOAD_FOLDER, 'new_images')
 # Create folders if they don't exist
 os.makedirs(ORIGINAL_FOLDER, exist_ok=True)
 os.makedirs(NEW_FOLDER, exist_ok=True)
+
+
 @app.route('/remove_background', methods=['POST'])
 def remove_background():
     try:
@@ -68,5 +70,12 @@ def remove_background():
         return str(e), 500
 
 
+
+@app.route('/welcome')
+def welcome():
+    print("Welcome Saksham")
+    return "Welcome Saksham"
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8058, debug=False)
